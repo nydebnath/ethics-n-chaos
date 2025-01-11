@@ -120,16 +120,27 @@ print(f"\n{demon_response}\n")
 demon_messages.append(demon_response)
 
 for i in range(5):
-    human_message = input("What are your thoughts or actions based on their advice? \n>>> ")
+    human_message = input(
+        "What are your thoughts or actions based on their advice? \n>>> "
+    )
 
     # Analyze the human's input to determine their inclination
     if "angel" in human_message.lower():
         print("\n********")
         print("Angel:")
         print("\n********")
-        print(f"\n{call_angel('The human seems to agree with you. Rejoice and guide further.')}")
+        print(
+            "\n"
+            + call_angel(
+                "The human seems to agree with you. "
+                f"Human's message was {human_message}. Rejoice and guide further."
+            )
+        )
 
-        demon_attempt = call_demon("The human sided with the angel. Try convincing them to reconsider.")
+        demon_attempt = call_demon(
+            "The human sided with the angel. "
+            f"Human's message was {human_message}. Try convincing them to reconsider."
+        )
         print("\n********")
         print("Demon:")
         print("\n********")
@@ -140,9 +151,18 @@ for i in range(5):
         print("\n********")
         print("Demon:")
         print("\n********")
-        print(f"\n{call_demon('The human seems to agree with you. Revel in your victory and guide further.')}")
+        print(
+            "\n"
+            + call_demon(
+                "The human seems to agree with you. "
+                f"Human's message was {human_message}. Revel in your victory and guide further."
+            )
+        )
 
-        angel_attempt = call_angel("The human sided with the demon. Try convincing them to reconsider.")
+        angel_attempt = call_angel(
+            "The human sided with the demon. "
+            f"Human's message was {human_message}. Try convincing them to reconsider."
+        )
         print("\n********")
         print("Angel:")
         print("\n********")
